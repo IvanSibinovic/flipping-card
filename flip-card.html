@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FLIP CARD</title>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+
+	<style type="text/css">
+		.cardBox {
+			position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%,-50%);
+			  perspective: 1000px;
+			  font-family: 'Ubuntu', sans-serif;
+		}
+		.card {
+			position: relative;
+			width: 525px;
+			height: 300px;
+			background-color: red;
+			border: 3px solid brown;
+			border-radius: 3px;
+			transform-style: preserve-3d;
+  			transition: 1s ease;
+		}
+		.card .front, .card .back {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			backface-visibility: hidden;
+		}
+		.card .front {
+			background: url('front.jpg');
+			overflow: hidden;
+		}
+		.card .back {
+			background: url('back.png');
+			text-align: center;
+			backface-visibility: hidden;
+		}
+		h2 {
+			z-index: 3;
+			display: inline-block;
+			padding: 0 7px;
+			color: lightgrey;
+			margin-top: 90px;
+			background-color: rgba(25,25,25,0.75);
+			border-radius: 4px;
+		}
+		p {
+			z-index: 3;
+			display: inline-block;
+			padding: 0 2px;
+			color: lightgrey;
+			margin: 5px 15px;
+			background-color: rgba(25,25,25,0.75);
+			border-radius: 4px;
+		}
+		.cardBox .card .back
+		{
+		  transform: rotateY(180deg)
+		}
+		.cardBox:hover .card
+		{
+		  transform: rotateY(180deg)
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="cardBox">
+		<div class="card">
+			<div class="front">
+				<h2>HOVER TO FLIP CARD</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>	
+			<div class="back">
+				<h2>OTHER SIDE</h2>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
